@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes nebulaShift {
+    0% { transform: scale(1) translate(0px, 0px); }
+    50% { transform: scale(1.15) translate(2% , 4%); }
+    100% { transform: scale(1) translate(0px, 0px); }
+  }
+
+  @keyframes floatWalle {
+    0% {
+      transform: translate(-15vw, 105vh) rotate(-15deg);
+    }
+    18% {
+      transform: translate(15vw, 75vh) rotate(5deg);
+    }
+    35% {
+      transform: translate(35vw, 55vh) rotate(15deg);
+    }
+    55% {
+      transform: translate(60vw, 35vh) rotate(-10deg);
+    }
+    72% {
+      transform: translate(80vw, 15vh) rotate(20deg);
+    }
+    90% {
+      transform: translate(110vw, -15vh) rotate(-5deg);
+    }
+    100% {
+      transform: translate(-10vw, 105vh) rotate(-15deg);
+    }
+  }
+
+  @keyframes floatEve {
+    0% {
+      transform: translate(110vw, -10vh) rotate(5deg);
+    }
+    20% {
+      transform: translate(85vw, 15vh) rotate(-10deg);
+    }
+    40% {
+      transform: translate(60vw, 40vh) rotate(10deg);
+    }
+    60% {
+      transform: translate(40vw, 65vh) rotate(-5deg);
+    }
+    80% {
+      transform: translate(15vw, 85vh) rotate(12deg);
+    }
+    95% {
+      transform: translate(-15vw, 110vh) rotate(-2deg);
+    }
+    100% {
+      transform: translate(110vw, -10vh) rotate(5deg);
+    }
+  }
+
+  @keyframes walleEyesBlink {
+    0%, 90%, 94%, 98%, 100% { transform: scaleY(1); }
+    92%, 96% { transform: scaleY(0.15); }
+  }
+
+  @keyframes eveEyesGlow {
+    0%, 100% { filter: drop-shadow(0 0 4px #38bdf8) brightness(1); }
+    50% { filter: drop-shadow(0 0 10px #0ea5e9) brightness(1.2); }
+  }
+
+  @keyframes co2Puff {
+    0% {
+      transform: scale(0.3) translate(0, 0);
+      opacity: 0.9;
+      filter: blur(0px);
+    }
+    100% {
+      transform: scale(2.2) translate(-60px, 40px);
+      opacity: 0;
+      filter: blur(8px);
+    }
+  }
+
+  @keyframes twinkleStar {
+    0%, 100% { opacity: 0.2; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.15); }
+  }
+
+  @keyframes cosmicDust {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+  }
+}
+
+.cosmic-nebula {
+  background: radial-gradient(circle at 10% 20%, #030712 0%, #090d16 60%, #020617 100%);
+  overflow: hidden;
+}
+
+.nebula-purple {
+  background: radial-gradient(circle at 25% 35%, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+  animation: nebulaShift 25s ease-in-out infinite alternate;
+}
+
+.nebula-cyan {
+  background: radial-gradient(circle at 75% 70%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+  animation: nebulaShift 18s ease-in-out infinite alternate-reverse;
+}
+
+.nebula-pink {
+  background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 45%);
+  animation: nebulaShift 30s ease-in-out infinite alternate;
+}
+
+.space-star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.star-twinkle-fast {
+  animation: twinkleStar 1.8s ease-in-out infinite;
+}
+
+.star-twinkle-mid {
+  animation: twinkleStar 3.2s ease-in-out infinite;
+}
+
+.star-twinkle-slow {
+  animation: twinkleStar 4.8s ease-in-out infinite;
+}
+
+.walle-drifter {
+  animation: floatWalle 45s linear infinite;
+  will-change: transform;
+}
+
+.eve-drifter {
+  animation: floatEve 45s linear infinite;
+  animation-delay: -10s; /* Start ahead of Wall-E to weave elegantly */
+  will-change: transform;
+}
+
+.walle-eye-blink {
+  animation: walleEyesBlink 6s infinite;
+}
+
+.eve-eye-glow {
+  animation: eveEyesGlow 3s ease-in-out infinite;
+}
+
+.co2-spray-puff {
+  animation: co2Puff 1.2s ease-out infinite;
+}
+

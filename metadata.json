@@ -1,0 +1,6 @@
+{
+  "name": "Física-Verse",
+  "description": "Plataforma de aprendizaje ludificado de física para décimo grado basada en la película Wall-E: Leyes de movimiento, energía, misiones de simulación, laboratorios y un asistente interactivo con M-O.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
